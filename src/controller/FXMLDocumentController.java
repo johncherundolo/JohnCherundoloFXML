@@ -124,6 +124,7 @@ public class FXMLDocumentController implements Initializable {
             // setting table data
             setTableData(statuses);
         }
+        
 
     }
 
@@ -158,7 +159,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void actionShowDetails(ActionEvent event) throws IOException {
         System.out.println("clicked");
-
+        
+ 
         
 
 
@@ -166,11 +168,38 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void actionShowDetailsInPlace(ActionEvent event) throws IOException {
-        System.out.println("clicked");
+  
+    }
 
-        
-                // pass currently selected model
-       
+    /**
+     *
+     * @param Quiz 4 end
+     */
+    @FXML
+    void createStatus(ActionEvent event) {
+        Scanner input = new Scanner(System.in);
+
+        // read input from command line
+        System.out.println("Enter ID:");
+        int id = input.nextInt();
+
+        System.out.println("Enter Status:");
+        String garbage = input.nextLine();
+        String statusInput = input.nextLine();
+
+        System.out.println("Enter Date (yyyy-mm-dd):");
+        String date = input.next();
+
+        // create a student instance
+        Status status = new Status();
+
+        // set properties
+        status.setId(id);
+        status.setStatus(statusInput);
+        status.setDate(date);
+
+        // save this student to databse by calling Create operation        
+        create(status);
 
     }
 
@@ -256,6 +285,7 @@ public class FXMLDocumentController implements Initializable {
         // create a student instance
         Status status = new Status();
 
+        
         // set properties
         status.setId(id);
         status.setStatus(statusInput);
@@ -291,7 +321,7 @@ public class FXMLDocumentController implements Initializable {
          * Quiz 4 begin
          */
         // set the cell value factories for the TableView Columns
-       
+
 //        studentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         /**

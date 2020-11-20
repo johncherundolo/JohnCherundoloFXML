@@ -5,7 +5,6 @@
  */
 package introjavafx;
 
-import java.net.URL;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,15 +13,16 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author smbillah
+ * @author Jack
  */
-public class IntroJavaFX extends Application {
+public class JohnCherundoloFXML extends Application {
     
     @Override
-    public void start(Stage stage) throws Exception {        
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLDocument.fxml"));
         
-        Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLDocument.fxml"));        
-        Scene scene = new Scene(root);        
+        Scene scene = new Scene(root);
+        
         stage.setScene(scene);
         stage.show();
     }
