@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Status.findByDate", query = "SELECT s FROM Status s WHERE s.date = :date")
     , @NamedQuery(name = "Status.findByStatusAndDate", query = "SELECT s FROM Status s WHERE s.status = :status and s.date = :date")
         // help: https://www.appsdeveloperblog.com/how-to-use-like-expression-in-jpa-sql-query/
+        //Had advance search query done from the source code
     ,@NamedQuery(name = "Status.findByStatusAdvanced", query = "SELECT s FROM Status s WHERE  LOWER(s.status) LIKE  CONCAT('%', LOWER(:status), '%')")
     , @NamedQuery(name = "Status.findByDateInBetween", query = "SELECT s FROM Status s WHERE  s.date >= :date_low AND s.date <= :date_high ")
 })
