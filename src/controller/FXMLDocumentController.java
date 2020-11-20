@@ -162,6 +162,30 @@ public class FXMLDocumentController implements Initializable {
     void actionShowDetails(ActionEvent event) throws IOException {
         System.out.println("clicked");
         
+        // pass currently selected model
+        Status selectedStatus = statusTable.getSelectionModel().getSelectedItem();
+        
+        // fxml loader
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DetailModelView.fxml"));
+
+        // load the ui elements
+        Parent detailedModelView = loader.load();
+
+        // load the scene
+        Scene tableViewScene = new Scene(detailedModelView);
+
+        //access the detailedControlled and call a method
+        DetailModelController detailedControlled = loader.getController();
+
+
+        detailedControlled.initData(selectedStatus);
+
+        // create a new state
+        Stage stage = new Stage();
+        stage.setScene(tableViewScene);
+        stage.show();
+
+        
  
         
 
