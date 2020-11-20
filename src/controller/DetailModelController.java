@@ -71,7 +71,7 @@ public class DetailModelController {
 
         try {
             // path points to /resource/images/
-            String imagename = "/resource/images/" + model.getStatus() + ".png";
+            String imagename = "/resource/images/" + model.getStatus() + ".jpg";
             Image profile = new Image(getClass().getResourceAsStream(imagename));
             image.setImage(profile);
 
