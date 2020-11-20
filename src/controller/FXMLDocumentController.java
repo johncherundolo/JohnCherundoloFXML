@@ -133,6 +133,7 @@ public class FXMLDocumentController implements Initializable {
     void searchByStatusAdvancedAction(ActionEvent event) {
         System.out.println("clicked");
 
+        //Had the advance search feature done because of the source code
         // getting the name from input box        
         String status = textboxStatus.getText();
 
@@ -328,7 +329,7 @@ public class FXMLDocumentController implements Initializable {
 
         //eanble row selection
         // (SelectionMode.MULTIPLE);
-        statusTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE)
+        statusTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 //        studentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         /**
