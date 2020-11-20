@@ -104,8 +104,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void searchByStatusAction(ActionEvent event) {
         System.out.println("clicked");
-
-        // getting the name from input box        
+        
+        // getting the name from input box     
+        //Had this part done from the source code
         String status = textboxStatus.getText();
 
         // calling a db read operaiton, readByName
@@ -321,7 +322,13 @@ public class FXMLDocumentController implements Initializable {
          * Quiz 4 begin
          */
         // set the cell value factories for the TableView Columns
+        statusStatus.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        statusID.setCellValueFactory(new PropertyValueFactory<>("Id"));
+        statusDatePosted.setCellValueFactory(new PropertyValueFactory<>("Date"));
 
+        //eanble row selection
+        // (SelectionMode.MULTIPLE);
+        statusTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE)
 //        studentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         /**
