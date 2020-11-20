@@ -106,7 +106,7 @@ public class FXMLDocumentController implements Initializable {
         System.out.println("clicked");
         
         // getting the name from input box     
-        //Had this part done from the source code
+        //Had the search feature done because of the source code
         String status = textboxStatus.getText();
 
         // calling a db read operaiton, readByName
